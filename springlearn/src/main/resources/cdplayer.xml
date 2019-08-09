@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compactDisc" class="second.wirebean.xml.entity.impl.XmlBlackDisc" >
+        <constructor-arg index="0" value="Love"/>
+        <constructor-arg index="1" value="Taylor Swift"/>
+        <constructor-arg index="2">
+            <list>
+                <value>Easy Love</value>
+                <value>Middle Love</value>
+                <value>Hard Love</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cdPlayer" class="second.wirebean.xml.entity.impl.XmlCDPlayer">
+        <constructor-arg ref="compactDisc" />
+    </bean>
+
+</beans>
